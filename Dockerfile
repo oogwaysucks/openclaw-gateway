@@ -1,5 +1,9 @@
 FROM openclaw/openclaw:latest
 
-EXPOSE 18789
+EXPOSE 8080
 
-CMD ["openclaw", "gateway", "--host", "0.0.0.0", "--port", "18789"]
+ENV OPENCLAW_GATEWAY_PORT=8080
+ENV OPENCLAW_STATE_DIR=/data/.openclaw
+ENV OPENCLAW_WORKSPACE_DIR=/data/workspace
+
+CMD ["openclaw-gateway"]
