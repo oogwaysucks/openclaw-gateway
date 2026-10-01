@@ -1,7 +1,7 @@
-FROM python:3.11-slim
+FROM node:20-slim
 
-RUN pip install openclaw-gateway
+RUN npm i -g openclaw
 
 EXPOSE 18789
 
-CMD ["openclaw-gateway", "--host", "0.0.0.0", "--port", "18789"]
+CMD ["openclaw", "gateway", "--host", "0.0.0.0", "--port", "18789"] 
