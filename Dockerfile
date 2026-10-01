@@ -1,9 +1,7 @@
-FROM node:20-slim
+FROM python:3.11-slim
 
-WORKDIR /app
-
-RUN npm install openclaw
+RUN pip install openclaw-py
 
 EXPOSE 18789
 
-CMD ["npx", "openclaw", "gateway", "--host", "0.0.0.0", "--port", "18789"]
+CMD ["openclaw-py", "--host", "0.0.0.0", "--port", "18789"]
