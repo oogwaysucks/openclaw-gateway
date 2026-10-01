@@ -1,7 +1,5 @@
-FROM python:3.11-slim
-
-RUN pip install openclaw-py
+FROM openclaw/openclaw:latest
 
 EXPOSE 18789
 
-CMD ["python", "-m", "openclaw", "--host", "0.0.0.0", "--port", "18789"]
+CMD ["openclaw", "gateway", "--host", "0.0.0.0", "--port", "18789"]
